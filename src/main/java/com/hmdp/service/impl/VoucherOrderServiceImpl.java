@@ -62,7 +62,8 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
 
     @PostConstruct
     private void init() {
-        SECKILL_ORDER_EXECUTOR.submit(new VoucherOrderHandler());
+        // 暂时不启动秒杀订单消费者：stream.orders / 消费组 g1 未创建时，消费者线程会因 NOGROUP 疯狂刷屏
+        // SECKILL_ORDER_EXECUTOR.submit(new VoucherOrderHandler());
     }
 
     private class VoucherOrderHandler implements Runnable {
