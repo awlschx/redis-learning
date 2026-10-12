@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  * 前端控制器
  * </p>
  *
- * @author 虎哥
+ * @author 陈浩轩
  */
 @RestController
 @RequestMapping("/shop")
